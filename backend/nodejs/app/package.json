@@ -1,0 +1,12 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run-script": "node ./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
