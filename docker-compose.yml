@@ -1,30 +1,30 @@
 version: "3.8"
 services:
-  nginx:
-    build:
-      context: ./servers/nginx
-      dockerfile: Dockerfile
-    container_name: nginx-x
-    image: ralfian01/dkr-dev:nginx
-    ports:
-      - "8080:80"
-      - "8443:443"
-    volumes:
-      - ./servers/nginx/config:/etc/nginx
-      - ./servers/nginx/html:/usr/share/nginx/html
+  # nginx:
+  #   build:
+  #     context: ./servers/nginx
+  #     dockerfile: Dockerfile
+  #   container_name: nginx-x
+  #   image: ralfian01/dkr-dev:nginx
+  #   ports:
+  #     - "8080:80"
+  #     - "8443:443"
+  #   volumes:
+  #     - ./servers/nginx/config:/etc/nginx
+  #     - ./servers/nginx/html:/usr/share/nginx/html
 
-  apache:
-    build:
-      context: ./servers/apache
-      dockerfile: Dockerfile
-    container_name: apache-x
-    image: ralfian01/dkr-dev:apache
-    ports:
-      - "8081:80"
-      - "8444:443"
-    volumes:
-      - ./servers/apache/config:/usr/local/apache2/conf
-      - ./servers/apache/html:/usr/local/apache2/htdocs
+  # apache:
+  #   build:
+  #     context: ./servers/apache
+  #     dockerfile: Dockerfile
+  #   container_name: apache-x
+  #   image: ralfian01/dkr-dev:apache
+  #   ports:
+  #     - "8081:80"
+  #     - "8444:443"
+  #   volumes:
+  #     - ./servers/apache/config:/usr/local/apache2/conf
+  #     - ./servers/apache/html:/usr/local/apache2/htdocs
 
   php:
     build:
@@ -39,43 +39,43 @@ services:
       - ./backend/php/config:/usr/local/etc
       - ./backend/php/www:/var/www
 
-  nodejs:
-    build:
-      context: ./backend/nodejs
-      dockerfile: Dockerfile
-    container_name: nodejs-x
-    image: ralfian01/dkr-dev:nodejs
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./backend/nodejs:/usr/src
+  # nodejs:
+  #   build:
+  #     context: ./backend/nodejs
+  #     dockerfile: Dockerfile
+  #   container_name: nodejs-x
+  #   image: ralfian01/dkr-dev:nodejs
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./backend/nodejs:/usr/src
 
-  reactjs:
-    build:
-      context: ./frontend/reactjs
-      dockerfile: Dockerfile
-    container_name: reactjs-x
-    image: ralfian01/dkr-dev:reactjs
-    ports:
-      - "5000:5000"
-      - "5080:80"
-    volumes:
-      - ./frontend/reactjs:/usr/src
+  # reactjs:
+  #   build:
+  #     context: ./frontend/reactjs
+  #     dockerfile: Dockerfile
+  #   container_name: reactjs-x
+  #   image: ralfian01/dkr-dev:reactjs
+  #   ports:
+  #     - "5000:5000"
+  #     - "5080:80"
+  #   volumes:
+  #     - ./frontend/reactjs:/usr/src
 
-  postgres:
-    image: postgres:16.2
-    container_name: postgres-x
-    ports:
-      - "5433:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=123456
+  # postgres:
+  #   image: postgres:16.2
+  #   container_name: postgres-x
+  #   ports:
+  #     - "5433:5432"
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=123456
 
-  mariadb:
-    image: mariadb:11.3
-    container_name: mariadb-x
-    ports:
-      - "3307:3306"
-    environment:
-      - MARIADB_USER=root
-      - MARIADB_ROOT_PASSWORD=123456
+  # mariadb:
+  #   image: mariadb:11.3
+  #   container_name: mariadb-x
+  #   ports:
+  #     - "3307:3306"
+  #   environment:
+  #     - MARIADB_USER=root
+  #     - MARIADB_ROOT_PASSWORD=123456
